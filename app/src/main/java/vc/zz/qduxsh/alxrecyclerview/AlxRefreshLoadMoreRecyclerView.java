@@ -420,6 +420,7 @@ public class AlxRefreshLoadMoreRecyclerView extends RecyclerView {
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_MOVE:
+                if(!mEnablePullRefresh)break;
                 int delta = (int)(event.getY()-oldY);
                 oldY = event.getY();
                 if (layoutManager.findViewByPosition(0) instanceof CustomDragHeaderView) {
